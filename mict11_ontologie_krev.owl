@@ -1,0 +1,454 @@
+Prefix: dc: <http://purl.org/dc/elements/1.1/>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4>
+
+
+Datatype: xsd:boolean
+
+    
+Datatype: xsd:positiveInteger
+
+    
+ObjectProperty: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jeLéčitelné>
+
+    Domain: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+    
+    Range: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Léčitelnost>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVedlejšíPříznaky>
+
+    Domain: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Léčitelnost>
+    
+    Range: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#VedlejšíPříznaky>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnitřníProjev>
+
+    Domain: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+    
+    Range: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnitřní>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnějšíProjev>
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Domain: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+    
+    Range: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnější>
+    
+    
+ObjectProperty: owl:topObjectProperty
+
+    
+DataProperty: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jePřenosné>
+
+    Domain: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+    
+    Range: 
+        xsd:boolean
+    
+    
+DataProperty: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jeVyléčitelné>
+
+    Domain: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+    
+    Range: 
+        xsd:boolean
+    
+    
+DataProperty: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máDobuLéčení>
+
+    Domain: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+    
+    Range: 
+        xsd:positiveInteger
+    
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#BezpříznakovéOnemocnění>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+         and (<http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnějšíProjev> exactly 0 <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnější>)
+    
+    SubClassOf: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+    
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#LehkéOnemocnění>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+         and (<http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máDobuLéčení> some xsd:positiveInteger[<= "1"^^xsd:positiveInteger])
+         and (<http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jeVyléčitelné> value true)
+    
+    SubClassOf: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+    
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Léčitelnost>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#VlastnostiOnemocnění>
+    
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#NepřenosnéOnemocnění>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+         and (<http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jePřenosné> value false)
+    
+    SubClassOf: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+    
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onem_Erytrocytů>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#OnemocněníKrve>
+    
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onem_Leukocytů>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#OnemocněníKrve>
+    
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onem_Plasmy>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#OnemocněníKrve>
+    
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onem_Trombocytů>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#OnemocněníKrve>
+    
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#OnemocněníKrve>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+    
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Projev>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#VlastnostiOnemocnění>
+    
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#PřenosnéOnemocnění>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+         and (<http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jePřenosné> value true)
+    
+    SubClassOf: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+    
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#PříznakovéOnemocnění>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+         and (<http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnějšíProjev> some <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnější>)
+    
+    SubClassOf: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+    
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#StředněZávažnéOnemocnění>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+         and (<http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máDobuLéčení> some xsd:positiveInteger[> "1"^^xsd:positiveInteger])
+         and (<http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máDobuLéčení> some xsd:positiveInteger[<= "3"^^xsd:positiveInteger])
+         and (<http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jeVyléčitelné> value true)
+    
+    SubClassOf: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+    
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#VedlejšíPříznaky>
+
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#VelmiZávařnáOnemocnění>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+         and (<http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jeVyléčitelné> value false)
+    
+    SubClassOf: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#OnemocněníKrve>
+    
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#VlastnostiOnemocnění>
+
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnitřní>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Projev>
+    
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnější>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Projev>
+    
+    
+Class: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#ZávažnéOnemocnění>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+         and (<http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máDobuLéčení> some xsd:positiveInteger[> "3"^^xsd:positiveInteger])
+         and (<http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jeVyléčitelné> value true)
+    
+    SubClassOf: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onemocnění>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#anemie>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onem_Erytrocytů>
+    
+    Facts:  
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jeLéčitelné>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#doplňky_stravy>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnitřníProjev>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#málo_krvinek>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnějšíProjev>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#bledost>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnějšíProjev>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#bolest_hlavy>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jePřenosné>  false,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jeVyléčitelné>  true,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máDobuLéčení>  "1"^^xsd:positiveInteger
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#antibiotika>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Léčitelnost>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#bledost>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnější>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#bolest_hlavy>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnější>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#chemoterapie>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Léčitelnost>
+    
+    Facts:  
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVedlejšíPříznaky>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#nevolnost>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#chynin>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Léčitelnost>
+    
+    Facts:  
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVedlejšíPříznaky>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#hučení_v_uších>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#deformace_krvinek>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnitřní>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#doplňky_stravy>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Léčitelnost>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#horečka>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnější>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#hučení_v_uších>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#VedlejšíPříznaky>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#infekce_v_krvi>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnitřní>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#infuze>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Léčitelnost>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#krvácení_z_nosu>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnější>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#křeče>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnější>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#leukemie>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onem_Leukocytů>
+    
+    Facts:  
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jeLéčitelné>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#chemoterapie>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnitřníProjev>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#moc_bílých_krvinek>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnějšíProjev>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#ztráta_chutě>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnějšíProjev>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#závratě>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jePřenosné>  false,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jeVyléčitelné>  true,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máDobuLéčení>  "5"^^xsd:positiveInteger
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#malarie>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onem_Erytrocytů>
+    
+    Facts:  
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jeLéčitelné>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#chynin>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnitřníProjev>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#deformace_krvinek>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnějšíProjev>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#bledost>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnějšíProjev>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#horečka>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnějšíProjev>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#křeče>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jePřenosné>  false,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jeVyléčitelné>  false
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#moc_bílých_krvinek>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnitřní>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#modřiny>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnější>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#málo_krvinek>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnitřní>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#málo_trombocytů>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnitřní>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#nevolnost>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#VedlejšíPříznaky>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#sepse>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onem_Plasmy>
+    
+    Facts:  
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jeLéčitelné>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#antibiotika>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnitřníProjev>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#infekce_v_krvi>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnějšíProjev>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#horečka>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnějšíProjev>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#třesavka>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnějšíProjev>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#zimnice>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jePřenosné>  true,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jeVyléčitelné>  true,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máDobuLéčení>  "1"^^xsd:positiveInteger
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#trombocytopenie>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Onem_Trombocytů>
+    
+    Facts:  
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jeLéčitelné>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#infuze>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnitřníProjev>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#málo_trombocytů>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnějšíProjev>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#krvácení_z_nosu>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máVnějšíProjev>  <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#modřiny>,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jePřenosné>  false,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#jeVyléčitelné>  true,
+     <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#máDobuLéčení>  "2"^^xsd:positiveInteger
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#třesavka>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnější>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#zimnice>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnější>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#ztráta_chutě>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnější>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#závratě>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnější>
+    
+    
+Individual: <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#únava>
+
+    Types: 
+        <http://www.semanticweb.org/to23m/ontologies/2021/4/untitled-ontology-4#Vnější>
+    
+    
